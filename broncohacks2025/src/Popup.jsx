@@ -36,9 +36,9 @@ export default function Popup() {
           <div className="modal-content" onClick={showPopup}>
             <h2>Discounted Plumbing in Your Area</h2>
             <p>
-              "Call (414) 414-4444 for more information and to receive 50% off!"
+              Call (414) 414-4444 or<b>Click</b>here to get your free quote today and receive up to 10% off for first time customers!
             </p>
-            <a class="round-button">x</a>
+            <a class="round-button" onClick={close}>x</a>
           </div>
         </div>
       )}
