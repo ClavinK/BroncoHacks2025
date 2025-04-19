@@ -1,13 +1,14 @@
 //src/component/module-one.jsx
-import React, {Component} from 'react';
-import '../src/component/global.css';
-import '../src/component/module-one.css';
+import {useNavigate} from 'react-router-dom';
+import '../component/mod-global.css';
+import '../component/module-one.css';
 
-class ModuleOne extends Component {
-    render() {
+function ModuleOne() {
+   
+        const navigate = useNavigate();
         return(
-            <div className="module-one">
-                <h1>Module 1: What is the Internet?</h1>
+            <div className="modules">
+                <h1>What is the Internet?</h1>
                 <div className="introduction">
                     <h2>What is the Internet and the Web?</h2>
                     <p>When you think of the Internet, think of it as a route to get from point A 
@@ -27,12 +28,19 @@ class ModuleOne extends Component {
                     </p>
                 </div>
                 <div className="button-container">
-                    <button className="btn">Back</button>
+                    <button 
+                    className="btn"
+                    onClick={() => {
+                        //Navigate to landing page
+                        navigate('/Landing');
+                    }}
+                    >
+                    Back</button>
                     <button 
                     className="btn" 
                     onClick={() => {
                         //Navigate to module two
-                        this.props.history.push('/module-two');
+                        navigate('/ModuleTwo');
                     }}
                     >
                     Next
@@ -40,7 +48,7 @@ class ModuleOne extends Component {
                 </div>
             </div>
         );
-    }
+    
 }
 
-export default modOne;
+export default ModuleOne;

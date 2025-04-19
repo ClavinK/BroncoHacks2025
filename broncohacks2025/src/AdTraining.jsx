@@ -2,8 +2,32 @@ import React, { useState, useEffect } from "react";
 import Popup from "./Popup";
 import ErrorPopup from "./ErrorPopup";
 import "./AdTraining.css";
+import Quizzez from "./container/quizzes";
 
 function AdTraining() {
+  const questions = [
+    {
+      question: "You see an ad that says 'You've won a free iPhone! Click here to claim your prize.' What should you do?",
+      options: [
+        "Click the ad quickly so you don’t miss out",
+        "Share it with friends to help them win too",
+        "Ignore it or close the ad — it's likely a scam",
+        "Enter your credit card info to confirm your prize"
+      ],
+      answer: "Ignore it or close the ad — it's likely a scam"
+    },
+    {
+      question: "An ad looks like it’s from your bank and asks you to log in to verify your account. What’s the safest action?",
+      options: [
+        "Click the ad and log in to be safe",
+        "Call the number in the ad immediately",
+        "Open your banking app or go to the official website directly",
+        "Reply to the ad with your personal information"
+      ],
+      answer: "Open your banking app or go to the official website directly"
+    }
+  ]
+  
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [showAdPopup, setShowAdPopup] = useState(false);
 
@@ -161,6 +185,7 @@ function AdTraining() {
       <footer>
         <p>© 2025 Senior Community News - Practice Internet Safety Website</p>
       </footer>
+      <Quizzez name="Misleading Ad" questions={questions}/>
     </div>
   );
 }
