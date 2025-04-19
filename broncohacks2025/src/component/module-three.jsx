@@ -1,7 +1,7 @@
 // src/component/module-three.jsx
 
 import React, { useState } from 'react';
-import '../component/global.css';
+import '../component/mod-global.css';
 import '../component/mod-strong-color.css';
 import '../component/mod-info-vid.css';
 import { useNavigate } from 'react-router-dom';

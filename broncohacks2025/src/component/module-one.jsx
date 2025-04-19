@@ -1,6 +1,6 @@
 //src/component/module-one.jsx
 import {useNavigate} from 'react-router-dom';
-import '../component/global.css';
+import '../component/mod-global.css';
 import '../component/module-one.css';
 
 function ModuleOne() {

@@ -1,5 +1,5 @@
 // src/component/module-two.jsx
-import '../component/global.css';
+import '../component/mod-global.css';
 import '../component/mod-strong-color.css';
 import { useNavigate } from 'react-router-dom';
 
