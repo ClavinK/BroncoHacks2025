@@ -12,6 +12,7 @@ strong {
 
 :root {
     --color-background-100: #EAA221;
+    --color-background-200: #F4E0C3;
 
 
     --font-size-xs: 1em;
@@ -22,6 +23,10 @@ strong {
     --font-weight-thin: 400;
     --font-weight-normal: 600;
     --font-weight-bold: 800;
+}
+
+body {
+    background-color: var(--color-background-200);
 }
 
 h1 {
