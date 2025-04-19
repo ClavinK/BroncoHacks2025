@@ -7,12 +7,12 @@ export default function Popup() {
   const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   const showPopup = () => {
-    setPopup(!popup);
+    setPopup(true);
     setShowErrorPopup(true);
   };
 
   const close = (event) => {
-    setPopup(!popup);
+    setPopup(false);
     setShowErrorPopup(false);
     event.stopPropagation();
   };
@@ -32,8 +32,11 @@ export default function Popup() {
   return (
     <>
       {popup && (
-        <div className="modal" onClick={showPopup}>
-          <div className="modal-content">
+        <div className="modal">
+          <div
+            className="modal-content"
+            onClick={showPopup}
+          >
             <h2>Discounted Plumbing in Your Area</h2>
             <p>
               "Call (414) 414-4444 for more information and to receive 50% off!"
