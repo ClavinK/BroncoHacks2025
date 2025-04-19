@@ -1,8 +1,11 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-navOptions = ["Landing", "Phishing", "Ad", "ScamCall"]
+const navOptions = ["Landing", "Phishing", "Ad", "ScamCall"]
 
 function Navbar() {
+  const navigate = useNavigate();
+  
   function handleClick(page) {
     navigate('/' + page);
   }
