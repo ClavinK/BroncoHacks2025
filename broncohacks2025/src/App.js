@@ -29,12 +29,12 @@ function App() {
           <Route path = "/" element={<Button />} />
           <Route path = "/Landing" element={setNavbar(<LandingPage />)} />
           <Route path = "/Phishing" element={setNavbar(<ModuleThree currentPage={2} />)} />
-          <Route path = "/Ad" element={setNavbar(<AdTraining />)} />
+          <Route path = "/Fake Ads" element={setNavbar(<ModuleThree currentPage={4} />)} />
           <Route path = "/Scam Call" element={setNavbar(<ModuleThree currentPage={3} />)} />
           <Route path = "/ModuleOne" element={<ModuleOne/>} />
           <Route path = "/ModuleTwo" element={<ModuleTwo/>} />
           <Route path = "/ModuleThree" element={<ModuleThree/>} />
-          <Route path = "/Quizzes" element={<Quizzes/>} />
+          <Route path = "/Ad" element={<AdTraining/>} />
         </Routes>
       </Router>   
     </>   
