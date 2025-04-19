@@ -7,8 +7,8 @@ function ModuleOne() {
    
         const navigate = useNavigate();
         return(
-            <div className="module-one">
-                <h1>Module 1: What is the Internet?</h1>
+            <div className="modules">
+                <h1>What is the Internet?</h1>
                 <div className="introduction">
                     <h2>What is the Internet and the Web?</h2>
                     <p>When you think of the Internet, think of it as a route to get from point A 

@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 function ModuleTwo() {
     const navigate = useNavigate();
     return (
-        <div>
-            <h1>Module 2: How to stay safe on the Internet!</h1>
+        <div className="modules">
+            <h1>How to stay safe on the Internet!</h1>
             <div className="safety">
                 <h2>Staying Safe on the Internet</h2>
                 <p>What exactly is online safety? Online safety essentially means protecting

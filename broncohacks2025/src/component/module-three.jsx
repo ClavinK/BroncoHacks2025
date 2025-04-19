@@ -33,7 +33,7 @@ function ModuleThree(){
     return (
         <div className="module-three">
             {currentModule === 1 && (
-                <div>
+                <div className="modules">
                     <h1>Potential Dangers on the Internet</h1>
                     <div className="dangers">
                         <h2>Be on the Lookout For:</h2>
@@ -66,7 +66,7 @@ function ModuleThree(){
             )}
 
             {currentModule === 2 && (
-                <div>
+                <div className="modules">
                     <h1>Email Phishing</h1>
                     <div class="email-phishing">
                         <h2>What is Phishing?</h2>
@@ -112,7 +112,7 @@ function ModuleThree(){
             )}
 
             {currentModule === 3 && (
-                <div>
+                <div className="modules">
                     <h1>Phone Scams</h1>
                     <div class="phone-scams">
                         <h2>What are Phone Scams?</h2>
@@ -148,7 +148,7 @@ function ModuleThree(){
             )}
 
             {currentModule === 4 && (
-                <div>
+                <div className="modules">
                     <h1>Fake Advertisements</h1>
                     <div class="fake-advertisements">
                         <h2>What are Fake Advertisements?</h2>
