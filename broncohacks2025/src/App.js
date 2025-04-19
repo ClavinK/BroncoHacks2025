@@ -3,13 +3,7 @@ import Button from './files/Button';
 import LandingPage from './files/Landing';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './component/navbar';
-<<<<<<< Updated upstream
-import React, { useState } from 'react';
-import AdTraining from './AdTraining';
-=======
 import React from 'react';
->>>>>>> Stashed changes
-import QuizQuestion from './component/quizquestion';
 import AdTraining from './AdTraining';
 
 
