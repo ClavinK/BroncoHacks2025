@@ -5,6 +5,7 @@ import "./AdTraining.css";
 
 function AdTraining() {
   const [showErrorPopup, setShowErrorPopup] = useState(false);
+  const [showAdPopup, setShowAdPopup] = useState(false);
 
   function getRandomNumber() {
     const min = Math.ceil(Math.min(1,6));
@@ -14,7 +15,6 @@ function AdTraining() {
 
   useEffect(() => {
     console.log(getRandomNumber() * 1000)
-    
   })
 
   const showPopup = (() => {
