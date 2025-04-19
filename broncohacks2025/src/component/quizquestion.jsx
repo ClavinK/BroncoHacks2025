@@ -3,9 +3,9 @@ import React, {useState} from 'react';
 function QuizQuestion(props){
     const questions = props.questions //insert question in the format below
         // {
-        //     question: /*insert question here*/,
-        //     option: /*insert array of choices */,
-        //     answer: /**insert correct answer */
+        //     question: /* insert question here */,
+        //     option: /* insert array of choices */,
+        //     answer: /* insert correct answer */
         // }
     
     const [clickedOption, setClickedOption] = useState(null);
