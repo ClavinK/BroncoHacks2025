@@ -29,6 +29,7 @@ function AdTraining() {
     }
   ]
   
+  const [adStyles, setAdStyles] = useState([]);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [showAdPopup, setShowAdPopup] = useState(false);
   const navigate = useNavigate();
@@ -37,6 +38,35 @@ function AdTraining() {
     const min = Math.ceil(Math.min(5, 12));
     const max = Math.floor(Math.max(5, 12));
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  useEffect(() => {
+    // Random ad popup timer
+    const time = setTimeout(() => {
+      setShowAdPopup(true);
+    }, getRandomNumber() * 1000);
+  
+    // Generate and store random styles for each ad once
+    const generatedStyles = Array.from({ length: 4 }, () => getRandomStyle());
+    setAdStyles(generatedStyles);
+  
+    return () => clearTimeout(time);
+  }, []);
+
+  function getRandomStyle() {
+    const random = Math.floor(Math.random() * 4 + 1)
+    switch(random){
+      case 1:
+        return {  backgroundColor: 'marigold', borderColor: 'red', borderStyle: 'dashed', borderWidth: '5px' };
+      case 2:
+        return { backgroundColor: 'rgba(255, 105, 180, 0.453)', borderColor: 'black', borderStyle: 'double', borderWidth: '6px' };
+      case 3:
+        return { backgroundColor: '#00ffff46', borderColor: '#0000ff', borderStyle: 'ridge', borderWidth: '7px' };
+      case 4:
+        return { backgroundColor: '#f8f8f8', borderColor: '#cc0000', borderStyle: 'inset', borderWidth: '2px' };
+      default:
+        return { backgroundColor: 'white', borderColor: 'red', borderStyle: 'dashed', borderWidth: '2px'};  
+    }
   }
 
   useEffect(() => {
@@ -86,7 +116,7 @@ function AdTraining() {
             spring planting. Bring your favorite seeds to share!
           </p>
 
-          <div className="ad fake" onClick={() => showPopup()}>
+          <div className="ad fake" onClick={() => showPopup()} style={adStyles[0]}>
             <div className="ad-title">
               CONGRATULATIONS! You're our 1,000,000th Visitor!
             </div>
@@ -102,7 +132,7 @@ function AdTraining() {
             Sign up at the front desk.
           </p>
 
-          <div className="ad fake" onClick={() => showPopup()}>
+          <div className="ad fake" onClick={() => showPopup()}  style={adStyles[1]}>
             <div className="ad-title">
               URGENT: VIRUS DETECTED ON YOUR DEVICE!
             </div>
@@ -139,7 +169,7 @@ function AdTraining() {
             Sunny with a high of 72°F. Perfect weather for a walk in the park!
           </p>
 
-          <div className="ad fake" onClick={() => showPopup("news")}>
+          <div className="ad fake" onClick={() => showPopup("news")}  style={adStyles[2]}>
             <div className="ad-title">
               SHOCKING: Local Grandma Wins $10 Million!
             </div>
@@ -168,7 +198,7 @@ function AdTraining() {
             </div>
           </div>
 
-          <div className="ad fake" onClick={() => showPopup()}>
+          <div className="ad fake" onClick={() => showPopup()}  style={adStyles[3]}>
             <div className="ad-title">ALERT: Microsoft Windows Support</div>
             <div className="ad-content">
               We've detected problems with your computer. Call our support team
