@@ -22,6 +22,7 @@ function setNavbar(element){
     </>
   )
 }
+import AdTraining from './AdTraining';
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -49,6 +50,13 @@ function App() {
         
       </div>
     </>  
+    <Router>
+      <Routes>
+        <Route path = "/" element={<Button />} />
+        <Route path = "/Landing" element={<LandingPage />} />
+        <Route path = "/Ad" element={<AdTraining />} />
+      </Routes>
+    </Router>
     
   );
 }
