@@ -1,0 +1,15 @@
+/* /src/component/module-one.css */
+
+.introduction h2 {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    text-align: center;
+    padding: 15px;
+}
+
+.introduction p {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-thin);
+    text-align: center;
+    padding: 15px;
+}

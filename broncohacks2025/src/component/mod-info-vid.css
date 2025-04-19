@@ -1,0 +1,7 @@
+/* /src/component/mod-info-video.css */
+
+.informational-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Landing.css'
 
 function LandingPage() {
+    const navigate = useNavigate();
 
     const location = useLocation();
     const isFromNav = new URLSearchParams(location.search).get('from') === 'nav';
@@ -53,11 +55,15 @@ function LandingPage() {
         message = <h1>Lets Make Sure This Never Happens Again.</h1>;
     }
 
+    function handleClick(){
+        navigate('/module-one');
+    }
+
     return (
         <div className='Landing-center'>
             <div>
                 {message}
-                {showButton && (<button className="landingButton fade-in">Module 1</button>)}
+                {showButton && (<button className="landingButton fade-in" onClick={handleClick}>Module 1</button>)}
             </div>
         </div>
     );
