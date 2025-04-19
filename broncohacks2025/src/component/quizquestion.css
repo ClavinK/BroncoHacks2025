@@ -2,7 +2,8 @@
     border: solid black 4px;
     margin: 10px 0;
     padding: 15px 30px;
-    width: 100%;
+    width: 95%;
+    background-color: white;
 }
 
 .answer-section{

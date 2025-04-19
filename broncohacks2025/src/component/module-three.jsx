@@ -1,16 +1,21 @@
 // src/component/module-three.jsx
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../component/mod-global.css';
 import '../component/mod-strong-color.css';
 import '../component/mod-info-vid.css';
 import { useNavigate } from 'react-router-dom';
 
-
-
-function ModuleThree(){
+function ModuleThree(props){
     const [currentModule, setCurrrentModule] = useState(1);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (props.currentPage) {
+            setCurrrentModule(props.currentPage);
+            console.log("Setting module to:", props.currentPage);
+        }
+    }, [props.currentPage]);
 
     const handleNext = () => {
         if (currentModule === 4) {

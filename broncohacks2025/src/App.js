@@ -28,7 +28,7 @@ function App() {
         <Routes>
           <Route path = "/" element={<Button />} />
           <Route path = "/Landing" element={setNavbar(<LandingPage />)} />
-          <Route path = "/Phishing" element={setNavbar(<Button />)} />
+          <Route path = "/Phishing" element={setNavbar(<ModuleThree currentPage={2} />)} />
           <Route path = "/Ad" element={setNavbar(<AdTraining />)} />
           <Route path = "/Scam Call" element={setNavbar(<Button />)} />
           <Route path = "/ModuleOne" element={<ModuleOne/>} />

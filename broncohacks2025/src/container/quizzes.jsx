@@ -86,7 +86,7 @@ function Quizzes(props){
     }
 
     return(
-        <div>
+        <>
             <h1>{props.name} Quiz</h1>
             <form className="answer-section">
                 <div>{list}</div>
@@ -96,7 +96,7 @@ function Quizzes(props){
             </div>
             
             {showPopup && <div className='score-msg'>{resultMsg}</div>}
-        </div>
+        </>
     )
 }
 
