@@ -4,9 +4,56 @@ import React, { useState, useEffect } from 'react';
 import '../component/mod-global.css';
 import '../component/mod-strong-color.css';
 import '../component/mod-info-vid.css';
+import Quizzes from '../container/quizzes';
 import { useNavigate } from 'react-router-dom';
 
 function ModuleThree(props){
+    const qPhish = [
+        {
+            question: "What is the main goal of an email phishing scam?",
+            options: [
+              "To offer discounts on popular products",
+              "To trick you into sharing personal information",
+              "To send you jokes and memes",
+              "To update your email settings"
+            ],
+            answer: "To trick you into sharing personal information"
+          },
+          {
+            question: "Which of the following is a sign of an email phishing attempt?",
+            options: [
+              "Proper grammar and spelling",
+              "An email from your friend",
+              "Urgent language or requests for personal information",
+              "A newsletter you subscribed to"
+            ],
+            answer: "Urgent language or requests for personal information"
+          }
+    ]
+
+    const qCall = [
+        {
+            question: "What is vishing?",
+            options: [
+              "A method of fishing using voice commands",
+              "A scam where attackers use phone calls to trick individuals into revealing personal information",
+              "A technique for improving voice recognition software",
+              "A type of email phishing involving voicemail messages"
+            ],
+            answer: "A scam where attackers use phone calls to trick individuals into revealing personal information"
+          },
+          {
+            question: "Which of the following is a common tactic used in vishing scams?",
+            options: [
+              "Sending emails with malicious links",
+              "Creating fake social media profiles",
+              "Spoofing caller ID to appear as a trusted organization",
+              "Hacking into voicemail systems"
+            ],
+            answer: "Spoofing caller ID to appear as a trusted organization"
+          }
+    ]
+    
     const [currentModule, setCurrrentModule] = useState(1);
     const navigate = useNavigate();
 
@@ -17,7 +64,6 @@ function ModuleThree(props){
     }, [props.currentPage]);
 
     const handleNext = () => {
-        window.scrollTo(0,0);
         switch(currentModule){
             case 1:
                 navigate("/Phishing");
@@ -34,15 +80,16 @@ function ModuleThree(props){
             default:
                 setCurrrentModule(currentModule + 1);
         }
+        window.scrollTo(0,0);
     };
 
     const handlePrev = () => {
-        window.scrollTo(0,0);
         if (currentModule === 1) {
             navigate('/ModuleTwo');
         } else {
             setCurrrentModule(currentModule - 1);
         }
+        window.scrollTo(0,0);
     };
 
     return (
@@ -115,11 +162,12 @@ function ModuleThree(props){
                             </p>
                         </div>
                         <div class="informational-video">
-                            <iframe width="640" height="400" src="https://www.youtube.com/embed/Y7zNlEMDmI4?si=Cx8SkZH60If0lTMC&autoplay=1"
+                            <iframe width="640" height="400" src="https://www.youtube.com/embed/Y7zNlEMDmI4?si=Cx8SkZH60If0lTMC&autoplay=1&cc_lang_pref=fr&cc_load_policy=1"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
+                        <Quizzes name="Phishing" questions={qPhish} />
                         <div class="button-container">
                             <button class="btn" onClick={handlePrev}>Back</button>
                             <button class="btn" onClick={handleNext}>Next</button>
@@ -151,11 +199,12 @@ function ModuleThree(props){
                         </div>
                         <div class="informational-video">
                             <iframe width="640" height="400"
-                                src="https://www.youtube.com/embed/DysFLnOf4Nw?si=VoEo2oQlZukF2QCP&autoplay=1"
+                                src="https://www.youtube.com/embed/DysFLnOf4Nw?si=VoEo2oQlZukF2QCP&autoplay=1&cc_lang_pref=fr&cc_load_policy=1"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
+                        <Quizzes name="Phone Scam" questions={qCall} />
                         <div class="button-container">
                             <button class="btn" onClick={handlePrev}>Back</button>
                             <button class="btn" onClick={handleNext}>Next</button>
@@ -185,13 +234,14 @@ function ModuleThree(props){
                             <p>Below is a quick video further explaining what Fake Advertisements are.</p>
                         </div>
                         <div class="informational-video">
-                            <iframe width="640" height="400" src="https://www.youtube.com/embed/3oEI0FCnI_Y?si=XZeAdRaAwr3-VoxG&autoplay=1"
+                            <iframe width="640" height="400" src="https://www.youtube.com/embed/3oEI0FCnI_Y?si=XZeAdRaAwr3-VoxG&autoplay=1&cc_lang_pref=fr&cc_load_policy=1"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <div class="button-container">
                             <button class="btn" onClick={handlePrev}>Back</button>
+                            <p>Next is a demonstration of a fake website</p>
                             <button class="btn" onClick={handleNext}>Next</button>
                         </div>
                     </div>

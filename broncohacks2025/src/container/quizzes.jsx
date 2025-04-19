@@ -19,6 +19,25 @@ function Quizzes(props){
       }
     }, [showScore]);
 
+    useEffect(() => {
+        if (!showPopup) return;
+      
+        let timeoutId;
+        const handleClickAnywhere = () => {
+            setShowPopup(false);
+        };
+      
+        timeoutId = setTimeout(() => {
+            document.addEventListener('click', handleClickAnywhere);
+        }, 100);
+      
+        return () => {
+            clearTimeout(timeoutId);
+            document.removeEventListener('click', handleClickAnywhere);
+        };
+    }, [showPopup]);
+      
+      
     const handleOptionChange = (questionKey, selectedValue) => {
         setShowScore(false);
         setSelectedOptions(prev => ({
@@ -87,15 +106,15 @@ function Quizzes(props){
 
     return(
         <>
-            <h1>{props.name} Quiz</h1>
+            <div className='quiz-title'>{props.name} Quiz</div>
             <form className="answer-section">
-                <div>{list}</div>
+                {list}
             </form>
             <div className="submit-btn-container">
                 <button onClick={handleSubmit}>Submit</button>
             </div>
             
-            {showPopup && <div className='score-msg'>{resultMsg}</div>}
+            {showPopup && <div className='score-popup'><div className='score-msg'>{resultMsg}</div></div>}
         </>
     )
 }

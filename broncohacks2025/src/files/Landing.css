@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 100px);
     text-align: center;
     
   }
@@ -18,19 +18,21 @@
 .landingButton {  
     font-size: 40px;
     margin-top: 20px;
-    background-color: grey;
     color: white;
+    background-color: #EAA221;
     padding: 30px 60px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     opacity: 0;
     transform: scale(0.95);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* <-- Add this */
+
   }
 
   .landingButton:hover {
     transform: scale(1.1);
+    background-color: grey;
   }
 
   @keyframes fadeIn {

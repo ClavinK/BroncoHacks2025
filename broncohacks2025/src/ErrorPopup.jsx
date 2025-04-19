@@ -18,7 +18,8 @@ function ErrorPopup({ time = 3000, onClose }) {
 
   return isVisible ? (
     <div open className="error">
-      <h3>If this was real you would've been HACKED.</h3>
+      <h1>ERROR!</h1>
+      <h3>This is not real.</h3>
       <p>Try not to click on suspicious advetisements.</p>
     </div>
   ) : null;

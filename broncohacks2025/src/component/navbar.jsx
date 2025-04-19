@@ -3,10 +3,11 @@ import './navbar.css';
 import { Link } from 'react-router-dom';
 
 const navOptions = ["Landing", "Phishing", "Scam Call", "Fake Ads"];
-const maskOptions = ["Landing", "Module 1", "Module 2", "Module 3"];
 
 function Navbar() {
   const [navLinks, setNavLinks] = useState([]);
+
+  window.scrollTo(0,0);
 
   useEffect(() => {
     const list = navOptions.map((option, i) => (

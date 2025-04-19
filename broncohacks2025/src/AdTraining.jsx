@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Popup from "./Popup";
 import ErrorPopup from "./ErrorPopup";
 import "./AdTraining.css";
@@ -7,34 +8,65 @@ import Quizzez from "./container/quizzes";
 function AdTraining() {
   const questions = [
     {
-      question: "You see an ad that says 'You've won a free iPhone! Click here to claim your prize.' What should you do?",
+      question: "What is a common characteristic of fake advertisements?",
       options: [
-        "Click the ad quickly so you don’t miss out",
-        "Share it with friends to help them win too",
-        "Ignore it or close the ad — it's likely a scam",
-        "Enter your credit card info to confirm your prize"
+        "They are always on TV",
+        "They have poor grammar and spelling",
+        "They never offer discounts",
+        "They only appear during holidays"
       ],
-      answer: "Ignore it or close the ad — it's likely a scam"
+      answer: "They have poor grammar and spelling"
     },
     {
-      question: "An ad looks like it’s from your bank and asks you to log in to verify your account. What’s the safest action?",
+      question: "Where can fake advertisements commonly be found?",
       options: [
-        "Click the ad and log in to be safe",
-        "Call the number in the ad immediately",
-        "Open your banking app or go to the official website directly",
-        "Reply to the ad with your personal information"
+        "Only on television",
+        "Only in newspapers",
+        "On social media, websites, or emails",
+        "Only in stores"
       ],
-      answer: "Open your banking app or go to the official website directly"
+      answer: "On social media, websites, or emails"
     }
   ]
   
+  const [adStyles, setAdStyles] = useState([]);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [showAdPopup, setShowAdPopup] = useState(false);
+  const navigate = useNavigate();
 
   function getRandomNumber() {
     const min = Math.ceil(Math.min(5, 12));
     const max = Math.floor(Math.max(5, 12));
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  useEffect(() => {
+    // Random ad popup timer
+    const time = setTimeout(() => {
+      setShowAdPopup(true);
+    }, getRandomNumber() * 1000);
+  
+    // Generate and store random styles for each ad once
+    const generatedStyles = Array.from({ length: 4 }, () => getRandomStyle());
+    setAdStyles(generatedStyles);
+  
+    return () => clearTimeout(time);
+  }, []);
+
+  function getRandomStyle() {
+    const random = Math.floor(Math.random() * 4 + 1)
+    switch(random){
+      case 1:
+        return {  backgroundColor: 'marigold', borderColor: 'red', borderStyle: 'dashed', borderWidth: '5px' };
+      case 2:
+        return { backgroundColor: 'rgba(255, 105, 180, 0.453)', borderColor: 'black', borderStyle: 'double', borderWidth: '6px' };
+      case 3:
+        return { backgroundColor: '#00ffff46', borderColor: '#0000ff', borderStyle: 'ridge', borderWidth: '7px' };
+      case 4:
+        return { backgroundColor: '#f8f8f8', borderColor: '#cc0000', borderStyle: 'inset', borderWidth: '2px' };
+      default:
+        return { backgroundColor: 'white', borderColor: 'red', borderStyle: 'dashed', borderWidth: '2px'};  
+    }
   }
 
   useEffect(() => {
@@ -84,7 +116,7 @@ function AdTraining() {
             spring planting. Bring your favorite seeds to share!
           </p>
 
-          <div className="ad fake" onClick={() => showPopup()}>
+          <div className="ad fake" onClick={() => showPopup()} style={adStyles[0]}>
             <div className="ad-title">
               CONGRATULATIONS! You're our 1,000,000th Visitor!
             </div>
@@ -100,7 +132,7 @@ function AdTraining() {
             Sign up at the front desk.
           </p>
 
-          <div className="ad fake" onClick={() => showPopup()}>
+          <div className="ad fake" onClick={() => showPopup()}  style={adStyles[1]}>
             <div className="ad-title">
               URGENT: VIRUS DETECTED ON YOUR DEVICE!
             </div>
@@ -137,7 +169,7 @@ function AdTraining() {
             Sunny with a high of 72°F. Perfect weather for a walk in the park!
           </p>
 
-          <div className="ad fake" onClick={() => showPopup("news")}>
+          <div className="ad fake" onClick={() => showPopup("news")}  style={adStyles[2]}>
             <div className="ad-title">
               SHOCKING: Local Grandma Wins $10 Million!
             </div>
@@ -166,7 +198,7 @@ function AdTraining() {
             </div>
           </div>
 
-          <div className="ad fake" onClick={() => showPopup()}>
+          <div className="ad fake" onClick={() => showPopup()}  style={adStyles[3]}>
             <div className="ad-title">ALERT: Microsoft Windows Support</div>
             <div className="ad-content">
               We've detected problems with your computer. Call our support team
@@ -186,6 +218,18 @@ function AdTraining() {
         <p>© 2025 Senior Community News - Practice Internet Safety Website</p>
       </footer>
       <Quizzez name="Misleading Ad" questions={questions}/>
+      <div className="button-container">
+        <button
+            className="btn"
+            onClick={() => {
+                //Navigate to module one
+                navigate('/Fake Ads');
+                window.scrollTo(0,0);
+            }}
+        >
+            Back
+        </button>
+      </div>
     </div>
   );
 }
