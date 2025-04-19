@@ -52,6 +52,7 @@ function AdTraining() {
     return () => clearTimeout(emailTimer);
   }, []);
 
+  useEffect(() =>{
     // Random ad popup timer
     const time = setTimeout(() => {
       setShowAdPopup(true);
@@ -63,7 +64,8 @@ function AdTraining() {
   
     return (() => {
       clearTimeout(time);
-  }, []);
+      
+  })}, []);
 
   function getRandomStyle() {
     const random = Math.floor(Math.random() * 4 + 1)
