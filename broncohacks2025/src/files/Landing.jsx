@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Landing.css'
 
 function LandingPage() {
+    const navigate = useNavigate();
 
     const [messageIndex, setMessageIndex] = useState(1);
     const [showButton, setShowButton] = useState(false);
@@ -46,7 +48,7 @@ function LandingPage() {
     }
 
     function handleClick(){
-        Navigate('/module-one');
+        navigate('/module-one');
     }
 
     return (
