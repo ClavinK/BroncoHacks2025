@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
-
 * {
     margin: 2.5px;
     padding: 2.5px; 
     font-family: 'Geologica', serif;
 }
 
+strong {
+    color: red;
+}
+
 :root {
-    --color-yellow-100: #EAA221;
+    --color-background-100: #EAA221;
     --color-background-200: #F4E0C3;
 
     --font-size-xs: 1em;
@@ -31,21 +34,35 @@ h1 {
     text-align: center;
     border: 1px solid black;
     padding: 15px;
-    background-color: var(--color-yellow-100);
+    background-color: var(--color-background-100);
 }
 
-.introduction h2 {  
+h2 {  
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-normal);
     text-align: center;
     padding: 15px;
 }
 
-.introduction p {
+p {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-thin);
     text-align: center;
     padding: 15px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+li {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-thin);
+    padding: 5px;
 }
 
 .button-container {
@@ -69,6 +86,3 @@ h1 {
     color: white;
     border-radius: 5px;
 }
-
-
-
