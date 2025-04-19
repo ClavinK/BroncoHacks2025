@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Popup from './Popup';
 import Navbar from './component/navbar';
 import React, { useState } from 'react';
+import AdTraining from './AdTraining';
 
 function setNavbar(element){
   return(
@@ -14,7 +15,6 @@ function setNavbar(element){
     </>
   )
 }
-import AdTraining from './AdTraining';
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -29,27 +29,8 @@ function App() {
           <Route path = "/Ad" element={setNavbar(<Button />)} />
           <Route path = "/ScamCall" element={setNavbar(<Button />)} />
         </Routes>
-      </Router>
-      <div>
-        {/* <Button /> */}
-        <button onClick={() => setIsPopupOpen(true)}>Show Popup</button>
-        
-        {isPopupOpen && (
-          <Popup 
-            onClose={() => setIsPopupOpen(false)}
-          />
-        )}
-        
-      </div>
-    </>  
-    <Router>
-      <Routes>
-        <Route path = "/" element={<Button />} />
-        <Route path = "/Landing" element={<LandingPage />} />
-        <Route path = "/Ad" element={<AdTraining />} />
-      </Routes>
-    </Router>
-    
+      </Router>   
+    </>   
   );
 }
 
