@@ -1,0 +1,46 @@
+.callout-box {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff2d8;
+    border-left: 6px solid #ff9800;
+    font-size: 16px;
+    color: #444;
+    font-style: italic;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .altButton {
+    margin-top: 15px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #444;
+    border: 2px solid #444;
+    padding: 12px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+  } 
+  
+  .altButton:hover {
+    background-color: #444;
+    color: white;
+  }
+  
+  .fade-text {
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  

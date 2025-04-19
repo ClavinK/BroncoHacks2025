@@ -1,6 +1,7 @@
 import './App.css';
 import Button from './files/Button';
-import LandingPage from './files/Landing';
+import LandingPage from './files/LandingPage';
+import Info from './files/Landing';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './component/navbar';
 import React from 'react';
@@ -27,7 +28,8 @@ function App() {
       <Router>
         <Routes>
           <Route path = "/" element={<Button />} />
-          <Route path = "/Landing" element={<LandingPage />} />
+          <Route path="/landing" element={setNavbar(<LandingPage />)} />  
+          <Route path="/info" element={<Info />} />
           <Route path = "/Phishing" element={setNavbar(<ModuleThree currentPage={2} />)} />
           <Route path = "/Fake Ads" element={setNavbar(<ModuleThree currentPage={4} />)} />
           <Route path = "/Scam Call" element={setNavbar(<ModuleThree currentPage={3} />)} />

@@ -2,7 +2,7 @@
     border: solid black 4px;
     margin: 10px 0;
     padding: 15px 30px;
-    width: 95%;
+    width: 100%;
     background-color: white;
 }
 
@@ -59,12 +59,16 @@ input[type='radio'] {
     transform: translate(-50%, -50%); /* centers it exactly */
     z-index: 9999;
     
-    width: 350px;
-    padding: 150px;
+    width: 75%;
+    max-width: 750px;
+    padding: 150px 100px;
     background-color: white;
     border: 2px solid black;
     border-radius: 5%;
     font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .score-popup {

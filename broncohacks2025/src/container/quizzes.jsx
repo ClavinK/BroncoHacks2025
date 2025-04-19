@@ -108,7 +108,7 @@ function Quizzes(props){
         <>
             <div className='quiz-title'>{props.name} Quiz</div>
             <form className="answer-section">
-                <div>{list}</div>
+                {list}
             </form>
             <div className="submit-btn-container">
                 <button onClick={handleSubmit}>Submit</button>
