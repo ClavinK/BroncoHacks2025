@@ -1,6 +1,6 @@
 import React from 'react';
 
-function landingPage() {
+function LandingPage() {
     return (
         <div>
             <h1>WHY DID YOU CLICK ON THAT BUTTON?!?!</h1>
@@ -8,4 +8,4 @@ function landingPage() {
     );
 }
 
-export default landingPage;
+export default LandingPage;
