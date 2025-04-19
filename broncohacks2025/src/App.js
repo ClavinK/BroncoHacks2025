@@ -17,12 +17,16 @@ function setNavbar(element){
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
   return (
     <>
       <Router>
         <Routes>
           <Route path = "/" element={<Button />} />
           <Route path = "/Landing" element={setNavbar(<LandingPage />)} />
+          <Route path = "/Phishing" element={setNavbar(<Button />)} />
+          <Route path = "/Ad" element={setNavbar(<Button />)} />
+          <Route path = "/ScamCall" element={setNavbar(<Button />)} />
         </Routes>
       </Router>
       <div>
