@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 function Landing() {
   const [timeLeft, setTimeLeft] = useState(5 * 60); // 5 minutes in seconds
 
-  function handleClick() {
-    navigate('/info');
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft(prev => {
@@ -30,7 +28,7 @@ function Landing() {
 
   const navigate = useNavigate();
   function handleSuspiciousClick() {
-    navigate('/Landing');
+    navigate('/Info');
   }
 
   return (
@@ -68,6 +66,6 @@ function Landing() {
       </footer>
     </div>
   );
-}}
+}
 
 export default Landing;

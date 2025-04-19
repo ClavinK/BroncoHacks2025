@@ -19,11 +19,14 @@ function LandingPage() {
           return;
         }
 
+        const timerArray = [];
+
         timers.current.push(setTimeout(() => setMessageIndex(2), 3000));
         timers.current.push(setTimeout(() => setMessageIndex(3), 6000));
         timers.current.push(setTimeout(() => setMessageIndex(4), 9000));
         timers.current.push(setTimeout(() => setShowButton(true), 10000));
 
+        timers.current = timerArray;   
 
         return function(){
             timers.current.forEach(clearTimeout);
@@ -45,14 +48,14 @@ function LandingPage() {
     }
 
     function handleClick(){
-        navigate('/ModuleOne');
+        navigate('/Landing');
     }
 
     return (
         <div className='Landing-center' onClick={() => {timers.current.forEach(clearTimeout); setMessageIndex(4); setShowButton(true)}}>
             <div>
                 {message}
-                {showButton && (<button className="landingButton fade-in" onClick={handleClick}>Learn More</button>)}
+                {showButton && (<button className="landingButton fade-in" onClick={handleClick}>Let's Begin</button>)}
             </div>
         </div>
     );
