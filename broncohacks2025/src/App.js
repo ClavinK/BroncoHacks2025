@@ -28,12 +28,8 @@ function App() {
       <Router>
         <Routes>
           <Route path = "/" element={<Button />} />
-<<<<<<< HEAD
           <Route path="/landing" element={setNavbar(<LandingPage />)} />  
           <Route path="/info" element={<Info />} />
-=======
-          <Route path = "/Landing" element={<LandingPage />} />
->>>>>>> 0880ca792545afb9f7a28cce5f5e38f68c58bd12
           <Route path = "/Phishing" element={setNavbar(<ModuleThree currentPage={2} />)} />
           <Route path = "/Fake Ads" element={setNavbar(<ModuleThree currentPage={4} />)} />
           <Route path = "/Scam Call" element={setNavbar(<ModuleThree currentPage={3} />)} />
