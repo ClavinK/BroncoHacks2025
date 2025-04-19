@@ -33,6 +33,7 @@ function ModuleOne() {
                     onClick={() => {
                         //Navigate to landing page
                         navigate('/Landing');
+                        window.scrollTo(0,0);
                     }}
                     >
                     Back</button>
@@ -41,6 +42,7 @@ function ModuleOne() {
                     onClick={() => {
                         //Navigate to module two
                         navigate('/ModuleTwo');
+                        window.scrollTo(0,0);
                     }}
                     >
                     Next

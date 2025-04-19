@@ -64,7 +64,6 @@ function ModuleThree(props){
     }, [props.currentPage]);
 
     const handleNext = () => {
-        window.scrollTo(0,0);
         switch(currentModule){
             case 1:
                 navigate("/Phishing");
@@ -81,15 +80,16 @@ function ModuleThree(props){
             default:
                 setCurrrentModule(currentModule + 1);
         }
+        window.scrollTo(0,0);
     };
 
     const handlePrev = () => {
-        window.scrollTo(0,0);
         if (currentModule === 1) {
             navigate('/ModuleTwo');
         } else {
             setCurrrentModule(currentModule - 1);
         }
+        window.scrollTo(0,0);
     };
 
     return (
@@ -241,6 +241,7 @@ function ModuleThree(props){
                         </div>
                         <div class="button-container">
                             <button class="btn" onClick={handlePrev}>Back</button>
+                            <p>Next is a demonstration of a fake website</p>
                             <button class="btn" onClick={handleNext}>Next</button>
                         </div>
                     </div>

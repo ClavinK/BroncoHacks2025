@@ -47,6 +47,7 @@ function ModuleTwo() {
                     onClick={() => {
                         //Navigate to module one
                         navigate('/ModuleOne');
+                        window.scrollTo(0,0);
                     }}
                 >
                     Back
@@ -55,6 +56,7 @@ function ModuleTwo() {
                     className="btn"
                     onClick={() => {
                         navigate('/ModuleThree');
+                        window.scrollTo(0,0);
                     }}
                 >
                     Next

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Popup from "./Popup";
 import ErrorPopup from "./ErrorPopup";
 import "./AdTraining.css";
@@ -30,6 +31,7 @@ function AdTraining() {
   
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [showAdPopup, setShowAdPopup] = useState(false);
+  const navigate = useNavigate();
 
   function getRandomNumber() {
     const min = Math.ceil(Math.min(5, 12));
@@ -186,6 +188,18 @@ function AdTraining() {
         <p>© 2025 Senior Community News - Practice Internet Safety Website</p>
       </footer>
       <Quizzez name="Misleading Ad" questions={questions}/>
+      <div className="button-container">
+        <button
+            className="btn"
+            onClick={() => {
+                //Navigate to module one
+                navigate('/Fake Ads');
+                window.scrollTo(0,0);
+            }}
+        >
+            Back
+        </button>
+      </div>
     </div>
   );
 }
