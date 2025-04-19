@@ -52,35 +52,17 @@ function AdTraining() {
     return () => clearTimeout(emailTimer);
   }, []);
 
-    // Random ad popup timer
-    const time = setTimeout(() => {
-      setShowAdPopup(true);
-    }, getRandomNumber() * 1000);
-  
-    // Generate and store random styles for each ad once
-    const generatedStyles = Array.from({ length: 4 }, () => getRandomStyle());
-    setAdStyles(generatedStyles);
-  
-    return (() => {
-      clearTimeout(time);
-  }, []);
-
-  function getRandomStyle() {
-    const random = Math.floor(Math.random() * 4 + 1)
-    switch(random){
-      case 1:
-        return {  backgroundColor: 'marigold', borderColor: 'red', borderStyle: 'dashed', borderWidth: '5px' };
-      case 2:
-        return { backgroundColor: 'rgba(255, 105, 180, 0.453)', borderColor: 'black', borderStyle: 'double', borderWidth: '6px' };
-      case 3:
-        return { backgroundColor: '#00ffff46', borderColor: '#0000ff', borderStyle: 'ridge', borderWidth: '7px' };
-      case 4:
-        return { backgroundColor: '#f8f8f8', borderColor: '#cc0000', borderStyle: 'inset', borderWidth: '2px' };
-      default:
-        return { backgroundColor: 'white', borderColor: 'red', borderStyle: 'dashed', borderWidth: '2px'};  
+  useEffect(() => {
+    let autoCloseTimer;
+    if(showEmailPopup) {
+      autoCloseTimer = setTimeout(() =>{
+        setShowEmailPopup(false);
+      }, 3000);
     }
-  }
 
+    return () => clearTimeout(autoCloseTimer);
+  }, [showEmailPopup]);
+  
   useEffect(() => {
     const time = setTimeout(() => {
       setShowAdPopup(true);

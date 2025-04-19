@@ -1,7 +1,7 @@
 import React from 'react';
 import './EmailPopup.css';
 
-function EmailPopUp({ onClick }) {
+function EmailPopUp({ onClick, onClose }) {
     return (
         <div className="popup-overlay" onClick={onClick}>
             <div className="popup-content">
