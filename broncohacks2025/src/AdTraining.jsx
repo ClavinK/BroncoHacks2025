@@ -32,19 +32,23 @@ function AdTraining() {
   const [showAdPopup, setShowAdPopup] = useState(false);
 
   function getRandomNumber() {
-    const min = Math.ceil(Math.min(1,6));
-    const max = Math.floor(Math.max(1,6));
+    const min = Math.ceil(Math.min(5, 12));
+    const max = Math.floor(Math.max(5, 12));
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   useEffect(() => {
-    console.log(getRandomNumber() * 1000)
-  })
+    const time = setTimeout(() => {
+      setShowAdPopup(true);
+    }, getRandomNumber() * 1000);
 
-  const showPopup = (() => {
+    return () => clearTimeout(time);
+  }, []);
+
+  const showPopup = () => {
     setShowErrorPopup(true);
-    console.log("Get Scammed!")
-  });
+    console.log("Get Scammed!");
+  };
 
   const handleErrorPopupClose = () => {
     setShowErrorPopup(false);
@@ -117,10 +121,7 @@ function AdTraining() {
               Sometimes buttons can be deceptive. This looks like a legitimate
               download button:
             </p>
-            <div
-              className="fake-download-button"
-              onClick={() => showPopup()}
-            >
+            <div className="fake-download-button" onClick={() => showPopup()}>
               Download Event Calendar
             </div>
             <p>
@@ -179,7 +180,7 @@ function AdTraining() {
         <ErrorPopup displayTime={3000} onClose={handleErrorPopupClose} />
       )}
 
-      
+      {showAdPopup && <Popup />}
 
       <footer>
         <p>© 2025 Senior Community News - Practice Internet Safety Website</p>

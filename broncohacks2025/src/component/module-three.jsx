@@ -19,7 +19,7 @@ function ModuleThree(props){
 
     const handleNext = () => {
         if (currentModule === 4) {
-            navigate('/Quizzes');
+            navigate('/Ad');
         } else {
             setCurrrentModule(currentModule + 1);
         }

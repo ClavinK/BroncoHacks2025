@@ -30,7 +30,7 @@ function App() {
           <Route path = "/Landing" element={setNavbar(<LandingPage />)} />
           <Route path = "/Phishing" element={setNavbar(<ModuleThree currentPage={2} />)} />
           <Route path = "/Ad" element={setNavbar(<AdTraining />)} />
-          <Route path = "/Scam Call" element={setNavbar(<Button />)} />
+          <Route path = "/Scam Call" element={setNavbar(<ModuleThree currentPage={3} />)} />
           <Route path = "/ModuleOne" element={<ModuleOne/>} />
           <Route path = "/ModuleTwo" element={<ModuleTwo/>} />
           <Route path = "/ModuleThree" element={<ModuleThree/>} />
