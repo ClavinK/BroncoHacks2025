@@ -7,24 +7,24 @@ import Quizzez from "./container/quizzes";
 function AdTraining() {
   const questions = [
     {
-      question: "You see an ad that says 'You've won a free iPhone! Click here to claim your prize.' What should you do?",
+      question: "What is a common characteristic of fake advertisements?",
       options: [
-        "Click the ad quickly so you don’t miss out",
-        "Share it with friends to help them win too",
-        "Ignore it or close the ad — it's likely a scam",
-        "Enter your credit card info to confirm your prize"
+        "They are always on TV",
+        "They have poor grammar and spelling",
+        "They never offer discounts",
+        "They only appear during holidays"
       ],
-      answer: "Ignore it or close the ad — it's likely a scam"
+      answer: "They have poor grammar and spelling"
     },
     {
-      question: "An ad looks like it’s from your bank and asks you to log in to verify your account. What’s the safest action?",
+      question: "Where can fake advertisements commonly be found?",
       options: [
-        "Click the ad and log in to be safe",
-        "Call the number in the ad immediately",
-        "Open your banking app or go to the official website directly",
-        "Reply to the ad with your personal information"
+        "Only on television",
+        "Only in newspapers",
+        "On social media, websites, or emails",
+        "Only in stores"
       ],
-      answer: "Open your banking app or go to the official website directly"
+      answer: "On social media, websites, or emails"
     }
   ]
   
