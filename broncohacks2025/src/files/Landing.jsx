@@ -14,22 +14,20 @@ function LandingPage() {
     const [messageIndex, setMessageIndex] = useState(isFromNav ? 3: 1);
     const [showButton, setShowButton] = useState(isFromNav);
 
-    useEffect(function () {
-        if (isFromNav) {
-          return;
-        }
-
+    useEffect(() => {
+        if (isFromNav) return;
+    
         const timerArray = [];
-
-        timers.current.push(setTimeout(() => setMessageIndex(2), 3000));
-        timers.current.push(setTimeout(() => setMessageIndex(3), 6000));
-        timers.current.push(setTimeout(() => setMessageIndex(4), 9000));
-        timers.current.push(setTimeout(() => setShowButton(true), 10000));
-
-        timers.current = timerArray;   
-
-        return function(){
-            timers.current.forEach(clearTimeout);
+    
+        timerArray.push(setTimeout(() => setMessageIndex(2), 3000));
+        timerArray.push(setTimeout(() => setMessageIndex(3), 6000));
+        timerArray.push(setTimeout(() => setMessageIndex(4), 9000));
+        timerArray.push(setTimeout(() => setShowButton(true), 10000));
+    
+        timers.current = timerArray; 
+    
+        return () => {
+            timerArray.forEach(clearTimeout);
         };
     }, [isFromNav]);
 
@@ -52,7 +50,7 @@ function LandingPage() {
     }
 
     return (
-        <div className='Landing-center' onClick={() => {timers.current.forEach(clearTimeout); setMessageIndex(4); setShowButton(true)}}>
+        <div className='Landing-center'>
             <div>
                 {message}
                 {showButton && (<button className="landingButton fade-in" onClick={handleClick}>Let's Begin</button>)}
