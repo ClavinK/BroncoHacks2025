@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Landing.css'
+import { useNavigate } from 'react-router-dom';
 
 function LandingPage() {
+    const navigate = useNavigate();
 
     const [messageIndex, setMessageIndex] = useState(1);
     const [showButton, setShowButton] = useState(false);
@@ -46,14 +48,14 @@ function LandingPage() {
     }
 
     function handleClick(){
-        Navigate('/module-one');
+        navigate('/module-one');
     }
 
     return (
         <div className='Landing-center'>
             <div>
                 {message}
-                {showButton && (<button className="landingButton fade-in">Module 1</button>)}
+                {showButton && (<button className="landingButton fade-in" onClick={handleClick}>Module 1</button>)}
             </div>
         </div>
     );

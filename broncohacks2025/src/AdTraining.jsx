@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Popup from "./Popup";
 import ErrorPopup from "./ErrorPopup";
 import "./AdTraining.css";
@@ -6,7 +6,18 @@ import "./AdTraining.css";
 function AdTraining() {
   const [showErrorPopup, setShowErrorPopup] = useState(false);
 
-  const showPopup = React.useCallback(() => {
+  function getRandomNumber() {
+    const min = Math.ceil(Math.min(1,6));
+    const max = Math.floor(Math.max(1,6));
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  useEffect(() => {
+    console.log(getRandomNumber() * 1000)
+    
+  })
+
+  const showPopup = (() => {
     setShowErrorPopup(true);
     console.log("Get Scammed!")
   });
@@ -143,6 +154,8 @@ function AdTraining() {
       {showErrorPopup && (
         <ErrorPopup displayTime={3000} onClose={handleErrorPopupClose} />
       )}
+
+      
 
       <footer>
         <p>© 2025 Senior Community News - Practice Internet Safety Website</p>
