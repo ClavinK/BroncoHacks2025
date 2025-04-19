@@ -12,6 +12,11 @@ nav {
 a:link{
     text-decoration: none;
     color: black;
+
+}
+
+nav a{
+    color: black;
 }
 
 .navLink {
@@ -25,7 +30,7 @@ a:link{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 50px;
+    height: 50px;
     font-size: large;
 }
 
