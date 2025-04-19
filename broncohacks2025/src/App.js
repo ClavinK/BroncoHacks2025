@@ -4,27 +4,17 @@ import LandingPage from './files/Landing';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Popup from './Popup';
 import React, { useState } from 'react';
+import AdTraining from './AdTraining';
 
 function App() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <Router>
       <Routes>
         <Route path = "/" element={<Button />} />
         <Route path = "/Landing" element={<LandingPage />} />
+        <Route path = "/Ad" element={<AdTraining />} />
       </Routes>
     </Router>
-    <div>
-      {/* <Button /> */}
-      <button onClick={() => setIsPopupOpen(true)}>Show Popup</button>
-      
-      {isPopupOpen && (
-        <Popup 
-          onClose={() => setIsPopupOpen(false)}
-        />
-      )}
-      
-    </div>
     
   );
 }
