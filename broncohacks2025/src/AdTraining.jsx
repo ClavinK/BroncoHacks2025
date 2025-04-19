@@ -92,9 +92,6 @@ function AdTraining() {
       default:
         return { backgroundColor: 'white', borderColor: 'red', borderStyle: 'dashed', borderWidth: '2px'};  
     }
-
-    return () => clearTimeout(autoCloseTimer);
-  }, [showEmailPopup]);
   
   useEffect(() => {
     const time = setTimeout(() => {
@@ -272,6 +269,7 @@ function AdTraining() {
       </div>
     </div>
   );
+  }
 }
 
 export default AdTraining;
