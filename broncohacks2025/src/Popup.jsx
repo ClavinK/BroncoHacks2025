@@ -1,36 +1,51 @@
 import React, { useState, useEffect } from "react";
 import "./Popup.css";
+import ErrorPopup from "./ErrorPopup";
 
 export default function Popup() {
-  const [modal, setModal] = useState(false);
+  const [popup, setPopup] = useState(true);
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
 
-  const toggleModal = () => {
-    setModal(!modal);
+  const showPopup = () => {
+    setPopup(!popup);
+    setShowErrorPopup(true);
   };
 
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
+  const close = (event) => {
+    setPopup(!popup);
+    setShowErrorPopup(false);
+    event.stopPropagation();
+  };
+
+  const handleErrorPopupClose = () => {
+    setShowErrorPopup(false);
+  };
+
+  useEffect(() => {
+    if (popup) {
+      document.body.classList.add("active-modal");
+    } else {
+      document.body.classList.remove("active-modal");
+    }
+  }, [popup]);
 
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">
-        Open
-      </button>
-
-      {modal && (
-        <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
+      {popup && (
+        <div className="modal" onClick={showPopup}>
           <div className="modal-content">
-            <h2>System</h2>
-            <p>Hot milfs near you!!</p>
-            <button className="close-modal" onClick={toggleModal}>
-              CLOSE
+            <h2>Discounted Plumbing in Your Area</h2>
+            <p>
+              "Call (414) 414-4444 for more information and to receive 50% off!"
+            </p>
+            <button className="close-modal" onClick={close}>
+              X
             </button>
           </div>
         </div>
+      )}
+      {showErrorPopup && (
+        <ErrorPopup displayTime={3000} onClose={handleErrorPopupClose} />
       )}
     </>
   );
