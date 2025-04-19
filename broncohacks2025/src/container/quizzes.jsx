@@ -5,14 +5,19 @@ function Quizzes(props){
     const [selectedOptions, setSelectedOptions] = useState({});
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
-    const [incorrectAnswers, setIncorrectAnswers] = useState([]);
-    const [correctAnswers, setCorrectAnswers] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
+    const [resultMsg, setResultMsg] = useState("");
 
-    useEffect(() =>{
-        if(showScore) {
-            alert(`You got ${score} out of ${props.questions.length} correct!`)
-        }
-    }, [showScore])
+    useEffect(() => {
+      if (showScore) {
+        setResultMsg(`You got ${score} out of ${props.questions.length} correct!`);
+      }
+      if (showPopup) {
+        setTimeout(() => {
+            setShowPopup(false);
+          }, 5000);
+      }
+    }, [showScore]);
 
     const handleOptionChange = (questionKey, selectedValue) => {
         setShowScore(false);
@@ -25,8 +30,6 @@ function Quizzes(props){
     const handleSubmit = (e) => {
         e.preventDefault();
         let correctCount = 0;
-        const incorrect = [];
-        const correct = [];
       
         if(Object.keys(selectedOptions).length === 2){
             setShowScore(true);
@@ -36,16 +39,12 @@ function Quizzes(props){
             const qKey = `quiz_${index+1}`;
             if (selectedOptions[qKey] === q.answer) {
                 correctCount++;
-                correct.push(qKey);
-            } else {
-                incorrect.push(qKey);
             }
         });
-      
-        setCorrectAnswers(correct);
-        setIncorrectAnswers(incorrect);
+        
         setScore(correctCount);
         setShowScore(true);
+        setShowPopup(true);
     };
     
     let list = [];
@@ -87,13 +86,17 @@ function Quizzes(props){
     }
 
     return(
-        <>
+        <div>
             <h1>{props.name} Quiz</h1>
             <form className="answer-section">
                 <div>{list}</div>
             </form>
-            <button onClick={handleSubmit}>Submit</button>
-        </>
+            <div className="submit-btn-container">
+                <button onClick={handleSubmit}>Submit</button>
+            </div>
+            
+            {showPopup && <div className='score-msg'>{resultMsg}</div>}
+        </div>
     )
 }
 

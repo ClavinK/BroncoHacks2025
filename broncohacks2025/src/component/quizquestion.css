@@ -40,3 +40,27 @@ input[type='radio'] {
     transform: scale(1.75);
     margin-right: 15px;
 }
+
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn-container button {
+    transform: scale(1.5);
+}
+
+.score-msg{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers it exactly */
+    z-index: 9999;
+    
+    width: 350px;
+    padding: 150px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5%;
+    font-size: 28px;
+}
