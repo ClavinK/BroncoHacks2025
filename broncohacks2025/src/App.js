@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Button from './files/Button';
 import LandingPage from './files/Landing';
