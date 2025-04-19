@@ -33,17 +33,12 @@ export default function Popup() {
     <>
       {popup && (
         <div className="modal">
-          <div
-            className="modal-content"
-            onClick={showPopup}
-          >
+          <div className="modal-content" onClick={showPopup}>
             <h2>Discounted Plumbing in Your Area</h2>
             <p>
               "Call (414) 414-4444 for more information and to receive 50% off!"
             </p>
-            <button className="close-modal" onClick={close}>
-              X
-            </button>
+            <a class="round-button">x</a>
           </div>
         </div>
       )}
