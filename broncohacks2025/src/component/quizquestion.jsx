@@ -35,26 +35,23 @@ function QuizQuestion(props){
         
     return (
         <div className='quiz-container'>
-            <h1>{props.name} Quiz</h1> {/*<< NEEDS THE MODULE NAME*/}
-            <div className="quiz-app">
-                <div className="question-section">
-                    <div id='question-header'>Question</div>
-                    <div id="question-text">{questions.question}</div>
-                </div>
-                <div className="answer-section">
-                    {questions.options.map((option)=>(
-                        <button 
-                            className='answer-button' 
-                            key={option} 
-                            onClick={()=>handleAnswerOptionClick(option)}
-                            onMouseEnter={() => setHoveredOption(option)}
-                            onMouseLeave={() => setHoveredOption(null)}
-                            style={getButtonStyle(option)} 
-                        >
-                            {option}
-                        </button>
-                    ))}
-                </div>
+            <div className="question-section">
+                <div id='question-header'>Question</div>
+                <div id="question-text">{questions.question}</div>
+            </div>
+            <div className="answer-section">
+                {questions.options.map((option)=>(
+                    <button 
+                        className='answer-button' 
+                        key={option} 
+                        onClick={()=>handleAnswerOptionClick(option)}
+                        onMouseEnter={() => setHoveredOption(option)}
+                        onMouseLeave={() => setHoveredOption(null)}
+                        style={getButtonStyle(option)} 
+                    >
+                        {option}
+                    </button>
+                ))}
             </div> 
         </div>
     )
