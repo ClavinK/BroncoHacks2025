@@ -1,22 +1,86 @@
-.button-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .button {
-    font-size: 100px;
-    background-color: #eaa221;
-    color: white;
-    padding: 30px 60px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .button:hover {
-    transform: scale(1.1);
-  }
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+* {
+  font-family: "Geologica", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.landing-page {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.landing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #EAA221;
+  color: white;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+  background-color: #e6ffe6;
+  border: 2px solid green;
+  box-shadow: 0 0 15px green;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scam-nav {
+  background-color: #EAA221;
+}
+
+.subtext {
+  color: #009900;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #cc0000;
+  margin-bottom: 30px;
+}
+
+.claim-button {
+  background-color: #ff0000;
+  color: white;
+  font-size: 20px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+.landing-footer {
+  background-color: #EAA221;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
   
