@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import './Landing.css'
+import '../files/Landing.css'
 
 
 function LandingPage() {
@@ -44,16 +44,19 @@ function LandingPage() {
 
     var message
     if (messageIndex === 1){
-        message = <h1>WHY DID YOU CLICK THAT BUTTON?!?!?</h1>;
+        message = <h1 className="landingH1">WHY DID YOU CLICK THAT BUTTON?!?!?</h1>;
     }
     else if (messageIndex === 2){
+
         message = <h1>Did You Know You Can Lose $Millions By Clicking That Button?</h1>;
+
+        message = <h1 className="landingH1">Did You Know You Can Lose Millions By Clicking That Button?</h1>;
     }
     else if (messageIndex === 3){
-        message = <h1>Next Time, THINK BEFORE YOU DO!</h1>;
+        message = <h1 className="landingH1">Next Time, THINK BEFORE YOU DO!</h1>;
     }
     else{
-        message = <h1>Lets Make Sure This Never Happens Again.</h1>;
+        message = <h1 className="landingH1">Lets Make Sure This Never Happens Again.</h1>;
     }
 
     function handleClick(){
@@ -65,7 +68,7 @@ function LandingPage() {
         <div className='Landing-center'>
             <div>
                 {message}
-                {showButton && (<button className="landingButton fade-in" onClick={handleClick}>Module 1</button>)}
+                {showButton && (<button className="landingButton fade-in" onClick={handleClick}>Learn More</button>)}
             </div>
         </div>
     );
