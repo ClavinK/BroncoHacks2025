@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import './quizquestion.css';
+
 
 function QuizQuestion(props){
     const questions = props.questions //insert question in the format below
@@ -8,6 +10,7 @@ function QuizQuestion(props){
         //     answer: /* insert correct answer */
         // }
     
+    const [hoveredOption, setHoveredOption] = useState(null);
     const [clickedOption, setClickedOption] = useState(null);
     const [isCorrect, setIsCorrect] = useState(false);
    
@@ -17,6 +20,10 @@ function QuizQuestion(props){
     };
 
     const getButtonStyle = (option) => {
+        if(hoveredOption === option && clickedOption !== option){
+            return { backgroundColor: 'grey', color: 'white'};
+        }
+
         if (option === questions.answer && isCorrect){
             return { backgroundColor: 'green', color: 'white' };
         } else if (option === clickedOption){
@@ -27,12 +34,12 @@ function QuizQuestion(props){
       };
         
     return (
-        <>
+        <div className='quiz-container'>
             <h1>{props.name} Quiz</h1> {/*<< NEEDS THE MODULE NAME*/}
             <div className="quiz-app">
                 <div className="question-section">
-                    <h3>Question</h3>
-                    <div className="question-text">{questions.question}</div>
+                    <div id='question-header'>Question</div>
+                    <div id="question-text">{questions.question}</div>
                 </div>
                 <div className="answer-section">
                     {questions.options.map((option)=>(
@@ -40,6 +47,8 @@ function QuizQuestion(props){
                             className='answer-button' 
                             key={option} 
                             onClick={()=>handleAnswerOptionClick(option)}
+                            onMouseEnter={() => setHoveredOption(option)}
+                            onMouseLeave={() => setHoveredOption(null)}
                             style={getButtonStyle(option)} 
                         >
                             {option}
@@ -47,7 +56,7 @@ function QuizQuestion(props){
                     ))}
                 </div>
             </div> 
-        </>
+        </div>
     )
 }
 

@@ -1,6 +1,6 @@
 nav {
     width: 100%;
-    height: 50px;
+    height: 75px;
     background-color: navy;
     display: flex;
     justify-content: center;
@@ -18,12 +18,15 @@ a:link{
     all: unset;
     margin: 10px 50px;
     padding: 0 5px;
-    min-width: 50px;
+    min-width: 150px;
     background-color: white;
     border: 1px solid black;
     border-radius: 10%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    max-height: 50px;
+    font-size: large;
 }
 
 .navLink:hover {
