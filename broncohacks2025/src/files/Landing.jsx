@@ -49,7 +49,7 @@ function LandingPage() {
     }
 
     function handleClick(){
-        navigate('/module-one');
+        navigate('/ModuleOne');
     }
 
     return (
