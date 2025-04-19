@@ -27,7 +27,7 @@ function App() {
       <Router>
         <Routes>
           <Route path = "/" element={<Button />} />
-          <Route path = "/Landing" element={setNavbar(<LandingPage />)} />
+          <Route path = "/Landing" element={<LandingPage />} />
           <Route path = "/Phishing" element={setNavbar(<ModuleThree currentPage={2} />)} />
           <Route path = "/Fake Ads" element={setNavbar(<ModuleThree currentPage={4} />)} />
           <Route path = "/Scam Call" element={setNavbar(<ModuleThree currentPage={3} />)} />

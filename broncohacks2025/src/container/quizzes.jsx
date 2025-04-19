@@ -87,7 +87,7 @@ function Quizzes(props){
 
     return(
         <>
-            <h1>{props.name} Quiz</h1>
+            <div className='quiz-title'>{props.name} Quiz</div>
             <form className="answer-section">
                 <div>{list}</div>
             </form>
