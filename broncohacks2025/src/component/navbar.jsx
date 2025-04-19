@@ -1,27 +1,21 @@
 import React from 'react';
-import './navbar.css';
+import './navbar.css'
 import { Link } from 'react-router-dom';
 
-const navOptions = ["Landing", "Phishing", "Ad", "Scam Call"];
+const navOptions = ["Landing", "Phishing", "Scam Call", "Ad"]
 
 function Navbar() {
-  return (
-    <nav>
-      {navOptions.map(function(navOpt) {
-        var formatted = "/" + navOpt.toLowerCase().replace(/\s+/g, '');
-
-        return (
-          <div key={navOpt} className="navLink">
-            {navOpt === "Landing" ? (
-              <Link to="/landing?from=nav">{navOpt}</Link>
-            ) : (
-              <Link to={formatted}>{navOpt}</Link>
-            )}
-          </div>
-        );
-      })}
+  return(
+   <nav>
+      {navOptions.map((navOpt) =>(
+        <Link to={`/${navOpt}`} key={navOpt} style={{ textDecoration: 'none' }}>
+        <div className="navLink">
+          {navOpt}
+        </div>
+      </Link>
+      ))}
     </nav>
-  );
+  )
 }
 
 export default Navbar;
