@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Popup from "./Popup";
 import ErrorPopup from "./ErrorPopup";
 import "./AdTraining.css";
+import EmailPopUp from "./EmailPopUp";
+import FakeEmailAlert from "./FakeEmailAlert";
 import Quizzez from "./container/quizzes";
 
 function AdTraining() {
@@ -28,9 +30,11 @@ function AdTraining() {
       answer: "On social media, websites, or emails"
     }
   ]
-  
+
   const [showErrorPopup, setShowErrorPopup] = useState(false);
   const [showAdPopup, setShowAdPopup] = useState(false);
+  const [showEmailPopup, setShowEmailPopup] = useState(false);
+  const [showFakeEmailAlert, setShowFakeEmailAlert] = useState(false);
   const navigate = useNavigate();
 
   function getRandomNumber() {
@@ -38,6 +42,14 @@ function AdTraining() {
     const max = Math.floor(Math.max(5, 12));
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+  useEffect(() => {
+    const emailTimer = setTimeout(() => {
+      setShowEmailPopup(true);
+    }, 15000);
+    return () => clearTimeout(emailTimer);
+  }, []);
+
 
   useEffect(() => {
     const time = setTimeout(() => {
@@ -184,20 +196,33 @@ function AdTraining() {
 
       {showAdPopup && <Popup />}
 
+      {showEmailPopup && (
+        <EmailPopUp
+          onClick={() => {
+            setShowFakeEmailAlert(true);
+            setShowEmailPopup(false);
+          }}
+        />
+      )}
+
+      {showFakeEmailAlert && (
+        <FakeEmailAlert onClose={() => setShowFakeEmailAlert(false)} />
+      )}
+
       <footer>
         <p>© 2025 Senior Community News - Practice Internet Safety Website</p>
       </footer>
-      <Quizzez name="Misleading Ad" questions={questions}/>
+      <Quizzez name="Misleading Ad" questions={questions} />
       <div className="button-container">
         <button
-            className="btn"
-            onClick={() => {
-                //Navigate to module one
-                navigate('/Fake Ads');
-                window.scrollTo(0,0);
-            }}
+          className="btn"
+          onClick={() => {
+            //Navigate to module one
+            navigate('/Fake Ads');
+            window.scrollTo(0, 0);
+          }}
         >
-            Back
+          Back
         </button>
       </div>
     </div>

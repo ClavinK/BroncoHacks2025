@@ -34,7 +34,7 @@ function App() {
           <Route path = "/ModuleOne" element={<ModuleOne/>} />
           <Route path = "/ModuleTwo" element={<ModuleTwo/>} />
           <Route path = "/ModuleThree" element={<ModuleThree/>} />
-          <Route path = "/Ad" element={setNavbar(<AdTraining/>)} />
+          <Route path = "/Ad" element={<AdTraining/>} />
         </Routes>
       </Router>   
     </>   
