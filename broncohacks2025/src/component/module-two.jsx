@@ -1,7 +1,7 @@
 // src/component/module-two.jsx
 import React, {Component} from 'react';
 import '../src/component/global.css';
-import '../src/component/module-strong.css';
+import '../src/component/mod-strong-color.css';
 import {useNavigate} from 'react-router-dom';
 
 class ModuleTwo extends Component {

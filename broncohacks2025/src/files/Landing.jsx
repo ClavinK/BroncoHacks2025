@@ -45,6 +45,10 @@ function LandingPage() {
         message = <h1>Lets Make Sure This Never Happens Again.</h1>;
     }
 
+    function handleClick(){
+        Navigate('/module-one');
+    }
+
     return (
         <div className='Landing-center'>
             <div>
