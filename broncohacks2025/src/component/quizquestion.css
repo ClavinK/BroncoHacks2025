@@ -66,3 +66,14 @@ input[type='radio'] {
     border-radius: 5%;
     font-size: 28px;
 }
+
+.score-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
