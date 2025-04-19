@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './component/navbar';
 import React from 'react';
 import AdTraining from './AdTraining';
+import ModuleThree from './component/module-three';
 
 
 function setNavbar(element){
@@ -23,7 +24,7 @@ function App() {
         <Routes>
           <Route path = "/" element={<Button />} />
           <Route path = "/Landing" element={setNavbar(<LandingPage />)} />
-          <Route path = "/Phishing" element={setNavbar(<Button />)} />
+          <Route path = "/Phishing" element={setNavbar(<ModuleThree />)} />
           <Route path = "/Ad" element={setNavbar(<AdTraining />)} />
           <Route path = "/Scam Call" element={setNavbar(<Button />)} />
         </Routes>
