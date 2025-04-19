@@ -1,9 +1,8 @@
 .quiz-container{
-    border-radius: 10%;
     border: solid black 4px;
-    margin: 10px;
+    margin: 10px 0;
     padding: 15px 30px;
-    max-width: 300px;
+    width: 100%;
 }
 
 .answer-section{
@@ -11,20 +10,33 @@
     flex-direction: column;
 }
 
-.answer-section button{
+.answer-section div{
     margin: 5px 0;
-    font-size: large;
 }
-/* New button*/
+
 .answer-button:hover {
     background-color: grey;
 }
 
 #question-header{
-    font-size: x-large;
+    font-size: 32px;
     font-weight: bold;
 }
 
 #question-text{
-    font-size: large;
+    font-size: 24px;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-size: 36px;
+}
+
+label {
+    font-size: 20px;
+}
+
+input[type='radio'] {
+    transform: scale(1.75);
+    margin-right: 15px;
 }

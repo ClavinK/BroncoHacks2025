@@ -5,7 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './component/navbar';
 import React from 'react';
 import AdTraining from './AdTraining';
+import ModuleOne from './component/module-one';
+import ModuleTwo from './component/module-two';
 import ModuleThree from './component/module-three';
+
 
 
 function setNavbar(element){
@@ -27,6 +30,9 @@ function App() {
           <Route path = "/Phishing" element={setNavbar(<ModuleThree />)} />
           <Route path = "/Ad" element={setNavbar(<AdTraining />)} />
           <Route path = "/Scam Call" element={setNavbar(<Button />)} />
+          <Route path = "/ModuleOne" element={<ModuleOne/>} />
+          <Route path = "/ModuleTwo" element={<ModuleTwo/>} />
+          <Route path = "/ModuleThree" element={<ModuleThree/>} />
         </Routes>
       </Router>   
     </>   
