@@ -34,6 +34,7 @@ function LandingPage() {
             setShowButton(true);
         }, 10000); //9 seconds
 
+
         return function(){
             clearTimeout(timer1);
             clearTimeout(timer2);
@@ -47,10 +48,7 @@ function LandingPage() {
         message = <h1 className="landingH1">WHY DID YOU CLICK THAT BUTTON?!?!?</h1>;
     }
     else if (messageIndex === 2){
-
-        message = <h1>Did You Know You Can Lose $Millions By Clicking That Button?</h1>;
-
-        message = <h1 className="landingH1">Did You Know You Can Lose Millions By Clicking That Button?</h1>;
+        message = <h1 className="landingH1">Did You Know You Can Lose $Millions By Clicking That Button?</h1>;
     }
     else if (messageIndex === 3){
         message = <h1 className="landingH1">Next Time, THINK BEFORE YOU DO!</h1>;
@@ -60,7 +58,6 @@ function LandingPage() {
     }
 
     function handleClick(){
-        navigate('/module-one');
         navigate('/ModuleOne');
     }
 

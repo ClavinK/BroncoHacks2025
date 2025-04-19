@@ -7,7 +7,7 @@ function Button() {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate('/Landing');
+    navigate('/info');
   }
     return (
       <div className='button-center'>
