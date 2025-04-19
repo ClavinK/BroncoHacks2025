@@ -12,7 +12,11 @@
   }
 
 .landingH1 h1 {
-    font-size: 40px;
+    font-size: 50px;
+}
+
+strong{
+  color: #EAA221;
 }
 
 .landingButton {  
@@ -47,4 +51,3 @@
   .fade-in {
     animation: fadeIn 2s ease forwards;
   }
-  

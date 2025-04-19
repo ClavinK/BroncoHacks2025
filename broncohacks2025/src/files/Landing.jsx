@@ -36,7 +36,7 @@ function LandingPage() {
         message = <h1 className="landingH1">WHY DID YOU CLICK THAT BUTTON?!?!?</h1>;
     }
     else if (messageIndex === 2){
-        message = <h1 className="landingH1">Did You Know You Can Lose $Millions By Clicking That Button?</h1>;
+        message = <h1 className="landingH1">Did You Know You Can <strong>LOSE</strong><strong>$MILLIONS</strong> By Clicking That Button?</h1>;
     }
     else if (messageIndex === 3){
         message = <h1 className="landingH1">Next Time, THINK BEFORE YOU DO!</h1>;
