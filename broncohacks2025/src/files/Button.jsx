@@ -3,16 +3,15 @@ import './Button.css'
 import { useNavigate } from 'react-router-dom';
 
 function Button() {
+  
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
-    function handleClick() {
-      navigate('/landing');
-    }
-    
+  function handleClick() {
+    navigate('/Landing');
+  }
     return (
       <div className='button-center'>
-        <button className='button'onClick={handleClick}>CLICK ME</button>
+          <button className='button' onClick={handleClick}>CLICK ME</button>
       </div>
     );
   }
