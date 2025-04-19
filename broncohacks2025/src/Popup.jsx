@@ -1,19 +1,3 @@
-// import React from "react";
-// import "./Popup.css";
-
-// const Popup = ({ spawnTimer, onClose }) => {
-//   return (
-//     <div className="popup-overlay">
-//       <div className="popup-content">
-//         <button className="close-popup" onClick={onClose}>
-//           x
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Popup;
 import React, { useState } from "react";
 import "./Popup.css";
 
@@ -40,7 +24,7 @@ export default function Popup() {
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-            <h2>Hello Modal</h2>
+            <h2>System</h2>
             <p>Hot milfs near you!!</p>
             <button className="close-modal" onClick={toggleModal}>
               CLOSE
@@ -48,7 +32,6 @@ export default function Popup() {
           </div>
         </div>
       )}
-      <p>Hot milfs in your area!</p>
     </>
   );
 }

@@ -4,35 +4,35 @@ import './Landing.css'
 
 
 function LandingPage() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [messageIndex, setMessageIndex] = useState(1);
-    const [showButton, setShowButton] = useState(false);
+  const [messageIndex, setMessageIndex] = useState(1);
+  const [showButton, setShowButton] = useState(false);
 
-    useEffect(function() {
-        var timer1 = setTimeout(function() {
-            setMessageIndex(2);
-        }, 3000); //3 seconds
+  useEffect(function () {
+    var timer1 = setTimeout(function () {
+      setMessageIndex(2);
+    }, 3000); //3 seconds
 
-        var timer2 = setTimeout(function () {
-            setMessageIndex(3);
-        }, 6000); //6 seconds
+    var timer2 = setTimeout(function () {
+      setMessageIndex(3);
+    }, 6000); //6 seconds
 
-        var timer3 = setTimeout(function () {
-            setMessageIndex(4);
-        }, 9000); //9 seconds
+    var timer3 = setTimeout(function () {
+      setMessageIndex(4);
+    }, 9000); //9 seconds
 
-        var timer4 = setTimeout(function () {
-            setShowButton(true);
-        }, 10000); //9 seconds
+    var timer4 = setTimeout(function () {
+      setShowButton(true);
+    }, 10000); //9 seconds
 
-        return function(){
-            clearTimeout(timer1);
-            clearTimeout(timer2);
-            clearTimeout(timer3);
-            clearTimeout(timer4)
-        };
-    }, []);
+    return function () {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
+    };
+  }, []);
 
     var message
     if (messageIndex === 1){
@@ -61,5 +61,6 @@ function LandingPage() {
         </div>
     );
 }
+
 
 export default LandingPage;
