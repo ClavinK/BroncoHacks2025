@@ -12,6 +12,11 @@ nav {
 a:link{
     text-decoration: none;
     color: black;
+
+}
+
+nav a{
+    color: black;
 }
 
 .navLink {
