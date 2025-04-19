@@ -17,6 +17,7 @@ function ModuleThree(props){
     }, [props.currentPage]);
 
     const handleNext = () => {
+        window.scrollTo(0,0);
         switch(currentModule){
             case 1:
                 navigate("/Phishing");
@@ -36,6 +37,7 @@ function ModuleThree(props){
     };
 
     const handlePrev = () => {
+        window.scrollTo(0,0);
         if (currentModule === 1) {
             navigate('/ModuleTwo');
         } else {
